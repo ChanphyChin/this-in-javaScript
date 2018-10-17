@@ -8,7 +8,9 @@
    3. this就是包含它的函数被调用时生成的某个具体对象的映射。
    4. function和箭头函数里面的this指向是有差异的。
 - **examples**  
+
   1. 如果调用的函数没有上级对象，那么this指向window
+  
   ```javascript
   function person () {
     var name = 'chanphy';
@@ -16,7 +18,9 @@
   }
   person(); // 这里f()其实就是Window.fn(); 所以this指向Window
   ```
+  
   2. 如果调用的函数存在上一级对象，那么this指向该对象
+  
   ```javascript
   var person = {
     name: 'chanphy',
@@ -26,7 +30,9 @@
   }
   obj.fn(); // 调用方法的是obj，所以this指向obj
   ```  
+  
   3. 如果函数不止被一级对象包含，那么this指向该函数的上一级对象
+  
   ```javascript
   var person = {
     name: 'chanphy',
@@ -39,7 +45,9 @@
   }
   person.do.fn(); // 调用方法的对象如果外层还有被其他对象包含，this指向它的上一级对象
   ```
+  
   4. 使用new示例过的构造函数中的this指向它的实例对象
+  
   ```javascript
   function Person () {
     this.name = 'chanphy'
@@ -47,7 +55,9 @@
   var person1 = new Person();
   console.log(person1.name) // 'chanphy'
   ```
+  
   5. 每个函数都有call、apply和bind方法，使用call和apply可以改变this的指向
+  
   ```javascript
   // call和apply
   var personA = {
@@ -69,6 +79,7 @@
   var personA = person.bind({name:'chanphy'});
   personA(); // chanphy
   ```
+  
   6. 严格模式下，函数内部this指向undefine
   ```javascript
   function person () {
@@ -77,7 +88,9 @@
   }
   person(); // undefine
   ```
+  
   7. 箭头函数this的指向，指向当前的函数的作用域链上的this，***不因call,aplly,bind而改变this指向***
+  
   ```javascript
   var person = {
     name: 'chanphy',
@@ -96,7 +109,9 @@
   }
   person.fn(); // chanphy   向上找函数作用域链，this指向person
   ```
+  
   8. dom事件中的this
+  
   ```javascript
   // 内链形式
   <button onclick="console.log(this);"></button>  // this为dom节点button
