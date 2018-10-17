@@ -2,12 +2,12 @@
 *created by Chanphy on 2018.10.17*
 
 ***remember：this的指向在函数定义的时候是无法确定的，this在函数被调用的时候指向调用这个函数的对象***  
-- this是什么？  
+- **this是什么？**  
    1. this跟var、new、return一样，是JavaScript的一个关键字。
    2. this就是JavaScript中的一个对象。
    3. this就是包含它的函数被调用时生成的某个具体对象的映射。
    4. function和箭头函数里面的this指向是有差异的。
-- examples  
+- **examples**  
   1. 如果调用的函数没有上级对象，那么this指向window
   ```javascript
   function person () {
