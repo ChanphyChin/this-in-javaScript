@@ -71,7 +71,7 @@
   };
   // 对象personA调用了personB的fn方法,这里如果方法里面涉及到this，那么this指向personA
   personB.fn.call(personA, '参数1','参数2'); // 'chanphy'
-  personB.fn.call(personA, ['参数1', '参数2']); // 'chanphy'
+  personB.fn.apply(personA, ['参数1', '参数2']); // 'chanphy'
   // bind 将函数绑定在第一个参数对象上，无论何时被调用
   function person () {
     console.log(this.name)
