@@ -108,7 +108,7 @@
       getName();
     }
   }
-  person.fn(); // chanphy   向上对象作用域链，this指向person
+  person.fn(); // chanphy   向上找函数作用域链，this指向person
   ```
     
   8. dom事件中的this  
