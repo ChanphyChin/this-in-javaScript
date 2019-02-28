@@ -55,8 +55,23 @@
   var person1 = new Person();
   console.log(person1.name) // 'chanphy'
   ```
+  
+   5. 闭包中this的指向  
+  
+  ```javascript
+  var name = 'chanphy';
+  var obj = {
+     name : "tom",
+     say : function(){
+       return function(){
+         console.log(this.name);
+       }
+     }
+  }
+  obj.say()();//chanphy  obj.say() return出来的是一个function，等于是一个普通的function
+  ```
     
-  5. 每个函数都有call、apply和bind方法，使用call和apply可以改变this的指向  
+  6. 每个函数都有call、apply和bind方法，使用call和apply可以改变this的指向  
   
   ```javascript
   // call和apply
@@ -80,7 +95,7 @@
   personA(); // chanphy
   ```
     
-  6. 严格模式下，函数内部this指向undefine  
+  7. 严格模式下，函数内部this指向undefine  
   
   ```javascript
   function person () {
@@ -90,7 +105,7 @@
   person(); // undefine
   ```
     
-  7. 箭头函数this的指向，指向当前的函数的作用域链上的this，***不因call,aplly,bind而改变this指向***   
+  8. 箭头函数this的指向，指向当前的函数的作用域链上的this，***不因call,aplly,bind而改变this指向***   
   
   ```javascript
   var person = {
@@ -111,7 +126,7 @@
   person.fn(); // chanphy   向上找函数作用域链，this指向person
   ```
     
-  8. dom事件中的this  
+  9. dom事件中的this  
     
   ```javascript
   // 内链形式
